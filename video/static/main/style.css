@@ -1,0 +1,15 @@
+body {
+    background-color: red;
+    color: white;
+    font-family: "Inter";
+}
+h1{
+    font-size: 100px;
+}
+video{
+    width:350px;
+    padding:50px 0px 0px 200px;
+}
+img{
+    width:350px;
+}

@@ -1,12 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Videolka - {{ video.title }}</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
 </head>
 <body>
     <h2>{{ video.title }}</h2>
     <img src="{{ video.thumbnail.url }}" alt="{{ video.title }}">
     <video controls src="{{ video.source.url }}"></video>
+<script src="{% static 'main/script.js' %}"></script>
 </body>
 </html>
