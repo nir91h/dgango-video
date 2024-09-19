@@ -1,0 +1,1 @@
+console.log("Ns dblbim rfrbt e vtyz ,jkmibt zqwf?...Йоу")
