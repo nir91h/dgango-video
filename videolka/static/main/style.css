@@ -1,8 +1,14 @@
 body {
-    background-color: red;
+    background-color: green;
     color: white;
     font-family: "Inter";
 }
+
 h1{
-font-size: 100px;
+    font-size: 100px;
+}
+
+img{
+    width:350px;
+    height:250px;
 }
