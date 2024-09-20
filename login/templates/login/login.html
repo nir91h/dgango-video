@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Videolka - Авторизация</title>
 </head>
 <body>
-
+<h1>Авторизация</h1>
+<form action="/login/" method="POST">
+    {% csrf_token %}
+    <input placeholder="Введите имя" type="text">
+    <input placeholder="Введите парол" type="password">
+    <button type="submit">Авторизоваться</button>
+</form>
 </body>
 </html>
