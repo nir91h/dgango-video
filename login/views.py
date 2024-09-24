@@ -2,6 +2,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render, redirect
 
+from . import forms
+from .forms import RegisterForm
+
+
 def login_view(request : HttpRequest) -> HttpResponse:
     if request.method == "POST":
         username = request.POST.get('username')
@@ -19,7 +23,16 @@ def login_view(request : HttpRequest) -> HttpResponse:
 
 
 def register(request: HttpRequest) -> HttpResponse:
-    return render(request, 'login/register.html')
+    if request.method == "GET":
+        form = forms.RegisterForm()
+        context = {'form': form}
+        return render(request, 'login/register.html', context)
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('/')
 
 def logout_view(request: HttpRequest) -> HttpResponse:
     logout(request)

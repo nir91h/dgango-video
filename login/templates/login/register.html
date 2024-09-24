@@ -5,7 +5,15 @@
     <title>Videolka - Регистрация</title>
 </head>
 <body>
-<h1>Регистрация</h1>
+    <h1>Регистрация</h1>
+
+    <div>
+        <form action="/register/" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Стать новым пользователем</button>
+        </form>
+    </div>
 </form>
 </body>
 </html>
