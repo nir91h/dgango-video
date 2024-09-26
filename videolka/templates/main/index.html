@@ -1,13 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Гавный Экран</title>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+{% extends 'main/base.html' %}
 
-</head>
-<body>
+{% load static %}
+{% block title %} Videolka - ГЛавный экран
     {% if not request.user.is_anonymous %}
     <a href="/logout">выход</a>
     {% endif %}
@@ -26,5 +20,4 @@
 
     </div>
     <script src="{% static 'main/script.js' %}"></script>
-</body>
-</html>
+{% endblock %}
